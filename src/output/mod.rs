@@ -1,6 +1,13 @@
 // here we go
 
+use std::thread::sleep;
+use std::time::Duration;
+use std::io::{self, Write};
+
+
 pub fn render(number:u64){
+
+    flicker();
 
     // umm these are js colors lol
     let colors = ["\x1b[31m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m"];
@@ -29,12 +36,12 @@ pub fn render(number:u64){
     match number % 4 {
         0 => {
             let pick = number as usize % prophecies.len();
-            println!("prophecy: {}", prophecies[pick]);
+           type_out(&format!("prophecy: {}", prophecies[pick]));
         }
 
         1 => {
             let pick = number as usize % readings.len();
-            println!("reading: you are lowk {}",readings[pick]);
+            type_out(&format!("reading: you are lowk {}",readings[pick]));
         }
 
         3 => {
@@ -44,7 +51,7 @@ pub fn render(number:u64){
         _ => {
             let pick = number as usize % prophecies.len();
             let color = colors[number as usize % colors.len()];
-            println!("prophecy:{}{}{}",color, prophecies[pick], reset);
+            type_out(&format!("prophecy:{}{}{}",color, prophecies[pick], reset));
         }
     }
 
@@ -76,3 +83,41 @@ let ch = ['*', '#', '+', '@'][((number >> 8) % 4) as usize];
         println!("{}", line);
     }
 }
+
+fn rand_small() -> u64 {
+    use std::time::{SystemTime, UNIX_EPOCH};
+    SystemTime::now().duration_since(UNIX_EPOCH).unwrap().subsec_nanos() as u64
+}
+
+fn flicker() {
+    // holy symbols
+    let junk = ['%', '#', '&', '@', '$', '?', '/', '\\', '*', '~'];
+
+    for _ in 0..8 {
+        let mut line = String::new();
+        for _ in 0..14 {
+            line.push(junk[(rand_small() % 10) as usize]);
+            line.push(' ');
+        }
+
+        print!("{}\r", line);
+        io::stdout().flush().unwrap();
+        sleep(Duration::from_millis(60));
+    }
+
+    print!("                              \r");
+    io::stdout().flush().unwrap();
+    println!();
+}
+
+
+// i hope this looks fine lol
+fn type_out(text: &str) {
+    for ch in text.chars(){
+        print!("{}", ch);
+        io::stdout().flush().unwrap();
+        sleep(Duration::from_millis(30));
+    }
+    println!();
+}
+
