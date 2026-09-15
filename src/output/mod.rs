@@ -1,5 +1,10 @@
 // here we go
 
+
+mod storm;
+pub use storm::render_storm;
+
+
 use std::thread::sleep;
 use std::time::Duration;
 use std::io::{self, Write};
@@ -48,7 +53,7 @@ pub fn render(number:u64){
         }
 
         3 => {
-            render_sigil(number);
+            render_storm(number);
         }
 
         _ => {
