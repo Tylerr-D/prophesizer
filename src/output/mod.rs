@@ -27,6 +27,9 @@ pub fn render(number:u64){
     "42 is what it means",
     "looks good in the hood",
     "you are going for it",
+    "think about the moon",
+    "what if it didnt happen",
+    
     ];
 
     let readings = [
@@ -35,6 +38,8 @@ pub fn render(number:u64){
         "haunted",
         "suspicious",
         "blessed",
+        "cool",
+        "cold",
     ];
 
     // let pick = number as usize % prophecies.len();
