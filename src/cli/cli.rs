@@ -11,5 +11,6 @@ pub struct CliArgs {
     #[arg(
         alias="input"
     )]
+    /// input any word
     pub input: String,
 }
