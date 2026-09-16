@@ -5,6 +5,7 @@ mod storm;
 pub use storm::render_storm;
 pub mod sick;
 pub mod memory;
+pub mod portraits;
 
 
 use std::thread::sleep;

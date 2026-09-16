@@ -10,6 +10,10 @@ fn main() {
 
         let args = CliArgs::parse();
 
+            if output::portraits::show_portrait(&args.input) {
+        return;
+    }
+
     if std::env::args().nth(1).as_deref() == Some("rick")
      {
          output::sick::play_rick(); 

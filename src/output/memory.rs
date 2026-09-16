@@ -49,7 +49,6 @@ pub fn stats(){
         }
     }
 
-    //omg atleast wrte these printlns yoursself broooo
 
     println!("total readings: {}",data.lines().count());
     println!("different words: {}", counts.len());
@@ -62,3 +61,5 @@ if top_count >= 5 {
 }
 
 // what the helly? why two closing curly bracket on same indent?
+
+// hi! what are you talkin about??
