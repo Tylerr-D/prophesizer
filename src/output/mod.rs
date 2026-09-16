@@ -5,7 +5,7 @@ mod storm;
 pub use storm::render_storm;
 pub mod sick;
 pub mod memory;
-
+pub mod secret;
 
 use std::thread::sleep;
 use std::time::Duration;
