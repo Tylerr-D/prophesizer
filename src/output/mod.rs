@@ -3,6 +3,7 @@
 
 mod storm;
 pub use storm::render_storm;
+pub mod sick;
 
 
 use std::thread::sleep;
