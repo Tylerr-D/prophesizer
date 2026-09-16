@@ -19,6 +19,8 @@ pub(crate) fn find(input: String) -> bool, usize {
             break;
         }
     }
+
+    matched, index
 }
 
 fn check_words(word: String) -> bool {
