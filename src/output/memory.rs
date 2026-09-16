@@ -55,5 +55,3 @@ pub fn stats() {
 
     }
 }
-
-// what the helly? why two closing curly bracket on same indent?
