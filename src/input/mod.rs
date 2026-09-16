@@ -12,4 +12,5 @@ pub(crate) struct Secrets {
     description: Option<String>,
     output: Option<String>,
     outputs: Option<Vec<String>>,
+    category: Option<String>,
 }
