@@ -8,12 +8,16 @@ pub(crate) static SECRET_WORDS: LazyLock<Vec<Secrets>> = LazyLock::new(|| {
     serde_json::from_str(SECRET_FILE).unwrap()
 });
 
-pub(crate) fn find(input: String) {
-    let mut special_words: HashMap<usize, &str> = HashMap::new();
-    let mut index = 0;
-    for secret in SECRET_WORDS.iter() {
-        special_words.insert(index, secret.input.as_deref().unwrap_or(""));
-        index += 1;
+pub(crate) fn find(input: String) -> bool, usize {
+    let mut index: usize = -1;
+    let mut matched: bool = false;
+
+    for (i, secret) in SECRET_WORDS.iter() {
+        if input == secret.input.as_deref().unwrap_or("") {
+            index = *i;
+            matched = true;
+            break;
+        }
     }
 }
 
