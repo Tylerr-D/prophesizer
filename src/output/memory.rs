@@ -1,5 +1,3 @@
-
-
 use std::collections::HashMap;
 use std::fs;
 use std::env::args;
@@ -20,12 +18,10 @@ pub fn record(word:&str) {
     let _ = fs::write(LOG, data);
 }
 
-pub fn stats(){
-
+pub fn stats() {
     let data = fs::read_to_string(LOG).unwrap_or_default();
 
-    if data.trim().is_empty(){
-
+    if data.trim().is_empty() {
         println!("machine remembered nothing");
         println!("feed it words first");
         return;
@@ -33,16 +29,16 @@ pub fn stats(){
 
     let mut counts: HashMap<&str, u32> = HashMap::new();
 
-    for line in data.lines(){
+    for line in data.lines() {
         *counts.entry(line).or_insert(0) += 1;
     }
 
     let mut top_word = "";
-    
-    let mut top_count  = 0;
+
+    let mut top_count = 0;
 
     for (word, count) in &counts {
-        if *count >  top_count {
+        if *count > top_count {
             top_count = *count;
 
             top_word = word;
@@ -51,14 +47,12 @@ pub fn stats(){
 
     //omg atleast wrte these printlns yoursself broooo
 
-    println!("total readings: {}",data.lines().count());
+    println!("total readings: {}", data.lines().count());
     println!("different words: {}", counts.len());
-println!("most-consulted: \"{}\" ({} times)", top_word, top_count);
+    println!("most-consulted: \"{}\" ({} times)", top_word, top_count);
 
-if top_count >= 5 {
-    println!("yea gng get over this word already. the obsession is crazy");
+    if top_count >= 5 {
+        println!("yea gng get over this word already. the obsession is crazy");
 
+    }
 }
-}
-
-// what the helly? why two closing curly bracket on same indent?
