@@ -8,7 +8,7 @@ pub(crate) static SECRET_WORDS: LazyLock<HashMap<usize, Secrets>> = LazyLock::ne
     serde_json::from_str(SECRET_FILE).unwrap()
 });
 
-pub(crate) fn check_word(input: String) -> bool, usize {
+pub(crate) fn check_word(input: String) -> (bool, usize) {
     let mut index: usize = -1;
     let mut matched: bool = false;
 
