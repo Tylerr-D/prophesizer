@@ -27,7 +27,8 @@ fn give_secret(index: usize) {
     let secret = SECRET_WORDS.get(&index).unwrap();
 
     if secret.category.is_some() {
-        let category = secret.category.as_ref().unwrap_or(&"".to_string());
+        let empty: &String = &String::from("");
+        let category: &str = secret.category.as_ref().unwrap_or(empty);
 
         if category == "text" {
             if secret.outputs.is_some() {
