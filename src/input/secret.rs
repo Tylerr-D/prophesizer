@@ -23,8 +23,42 @@ pub(crate) fn check_word(input: String) -> (bool, usize) {
     (matched, index)
 }
 
-fn check_words(word: String) -> bool {
-    todo!(
-        "loop csv to check if word exists"
-    )
+fn give_secret(index: usize) {
+    let secret = SECRET_WORDS.get(&index).unwrap();
+
+    if secret.category.is_some() {
+        let category = secret.category.as_ref().unwrap_or(&"".to_string());
+
+        if category == "text" {
+            if secret.outputs.is_some() {
+                let outputs = secret.outputs.as_ref().unwrap();
+                todo!(
+                    "call output::secret::output_variable_secret"
+                )
+            } else if secret.output.is_some() {
+                let output = secret.output.as_ref().unwrap();
+                todo!(
+                    "call output::secret::output_secret"
+                )
+            } else {
+                todo!(
+                    "call generic output"
+                )
+            }
+        }
+
+        if category == "ascii-animation" {
+            todo!(
+                "call output::secret::ascii-animation"
+            )
+        }
+
+        if category == "ascii-art" {
+            todo!(
+                "call output::ascii-art"
+            )
+        }
+
+        // add more categories here
+    }
 }
