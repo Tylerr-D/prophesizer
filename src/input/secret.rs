@@ -9,7 +9,7 @@ pub(crate) static SECRET_WORDS: LazyLock<HashMap<usize, Secrets>> = LazyLock::ne
 });
 
 pub(crate) fn check_word(input: String) -> (bool, usize) {
-    let mut index: usize = -1;
+    let mut index: usize = 0;
     let mut matched: bool = false;
 
     for (i, secret) in SECRET_WORDS.iter() {
