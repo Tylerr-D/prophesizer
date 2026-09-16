@@ -20,7 +20,7 @@ pub(crate) fn check_word(input: String) -> (bool, usize) {
         }
     }
 
-    matched, index
+    (matched, index)
 }
 
 fn check_words(word: String) -> bool {
