@@ -40,26 +40,15 @@ const ZACH: &str = r#",'''''''''''......''''.'''''''',,,,;;;;:::cccllloo
 
 
 pub fn show_portrait(word: &str) -> bool {
-
     match word {
-
-        "zach" | "zrl" | "goat" | "Goat" | "ceo" | "chill" | "genius" | "theBigLeagues" => 
-        {
-
-
-println!();
-
-
-println!("zach latta himself");
-
-                                    println!();
-
-            print!("{}", ZACH); 
-            let _ = io::stdout().flush(); 
+        "zach" | "zrl" | "goat" | "Goat" | "ceo" | "chill" | "genius" | "theBigLeagues" => {
+            println!();
+            println!("zach latta himself");
+            println!();
+            print!("{}", ZACH);
+            let _ = io::stdout().flush();
             true
-
         }
-
         _ => false,
     }
 }
