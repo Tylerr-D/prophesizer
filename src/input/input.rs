@@ -8,11 +8,9 @@ use std::io::Write;
 // unfinished
 
 pub(crate) fn parse(input: String) {
-    if input.is_empty() {
-        let gotten = get();
-    }
-
-
+    todo!(
+        "Add the parser"
+    )
 }
 
 // if input is empty, then asks user for input

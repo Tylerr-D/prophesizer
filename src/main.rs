@@ -3,7 +3,6 @@ pub mod cli;
 pub mod algs;
 pub mod input;
 
-use std::process::exit;
 use clap::Parser;
 use cli::CliArgs;
 
