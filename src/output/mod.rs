@@ -6,6 +6,8 @@ pub use storm::render_storm;
 pub mod sick;
 pub mod memory;
 pub mod secret;
+pub mod portraits;
+
 
 use std::thread::sleep;
 use std::time::Duration;

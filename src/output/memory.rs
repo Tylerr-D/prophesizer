@@ -45,7 +45,6 @@ pub fn stats() {
         }
     }
 
-    //omg atleast wrte these printlns yoursself broooo
 
     println!("total readings: {}", data.lines().count());
     println!("different words: {}", counts.len());
@@ -56,3 +55,5 @@ pub fn stats() {
 
     }
 }
+
+// what the helly? why two closing curly bracket on same indent?

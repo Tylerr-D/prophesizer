@@ -10,8 +10,13 @@ use cli::CliArgs;
 fn main() {
     let args = CliArgs::parse();
 
-    if std::env::args().nth(1).as_deref() == Some("rick") {
-        output::sick::play_rick();
+    if output::portraits::show_portrait(&args.input) {
+        return;
+    }
+
+    if std::env::args().nth(1).as_deref() == Some("rick")
+     {
+         output::sick::play_rick(); 
         return; 
     }
 
@@ -40,7 +45,7 @@ fn main() {
                  args.input, seen, if seen>1 {"s"} else {""});
         println!();
 
-        if seen == 3 {
+        if seen == 2 {
             println!("gng obsession is a sin");
         }
 
