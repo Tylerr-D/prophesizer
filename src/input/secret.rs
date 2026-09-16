@@ -4,7 +4,7 @@ use crate::input::Secrets;
 
 const SECRET_FILE: &'static str = include_str!("secret.json");
 
-pub(crate) static SECRET_WORDS: LazyLock<Vec<Secrets>> = LazyLock::new(|| {
+pub(crate) static SECRET_WORDS: LazyLock<HashMap<usize, Secrets>> = LazyLock::new(|| {
     serde_json::from_str(SECRET_FILE).unwrap()
 });
 
