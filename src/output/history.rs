@@ -1,4 +1,5 @@
 use std::fs;
+use std::collections::HashMap;
 
 const LOG: &str = "prophesizer.log";
 
@@ -19,20 +20,41 @@ pub fn show_history(){
     let lines: Vec<&str> = data.lines().collect();
     let total = lines.len();
 
+    match mode {
+
+        "used" => by_used(&lines, total),
+        "abc" => by_alpha(&lines, total),
+        _ => by_latest(&lines, total),
+    }
+
+}
+
+    // println!();
+    // println!("total words fed: {}", total);
+
+    // if total > 20 {
+    //     println!("that is a lot of words, do you use this machine or worship it");
+    // }
+
+fn by_latest(lines: &|&str|, total: usize){
+
     println!("recent feedings:");
     println!();
 
     let start = total.saturating_sub(10);
 
-    for line in &lines[start..] {
-        println!("  {}", line);
+    or line in &lines[start..] {
+         println!("  {}", line);
+     }
+
+     footer(total);
+}
+
+fn by_used(lines: &|&str|, total: usize){
+
+    let mut counts: HashMap<&str, u32> = HashMap::new();
+
+    let lines in lines {
+        *counts.entry(line).or_insert(0) += 1;
     }
-
-    println!();
-    println!("total words fed: {}", total);
-
-    if total > 20 {
-        println!("that is a lot of words, do you use this machine or worship it");
-    }
-
 }
