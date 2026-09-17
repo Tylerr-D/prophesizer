@@ -4,17 +4,16 @@
 mod storm;
 pub use storm::render_storm;
 pub mod sick;
-pub mod memory;
 pub mod secret;
 pub mod portraits;
 
 
+use std::f64::consts::PI;
+use std::fs::File;
+use std::io::{self, Write};
+use std::process::Command;
 use std::thread::sleep;
 use std::time::Duration;
-use std::io::{self, Write};
-use std::fs::File;
-use std::f64::consts::PI;
-use std::process::Command;
 
 
 pub fn render(number:u64){
