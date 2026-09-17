@@ -57,4 +57,14 @@ fn by_used(lines: &|&str|, total: usize){
     let lines in lines {
         *counts.entry(line).or_insert(0) += 1;
     }
+
+    let mut pairs: Vec<(&str, u32)> = counts.into_iter().collect();
+    pairs.sort_by(|a, b| b.1.cmp(&a.1));
+
+    println!("most consulted:");
+    println!();
+
+    for (word, count) in pairs.iter().take(10){
+        println!("{:>3} x  {}", count, word);
+    }
 }
