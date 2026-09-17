@@ -36,6 +36,11 @@ fn main() {
         return;
     }
 
+    if args.input == "history" {
+        output::history::show_history();
+        return;
+    }
+
 
     let number = algs::process_word(&args.input);
 

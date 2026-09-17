@@ -8,6 +8,7 @@ pub mod memory;
 pub mod secret;
 pub mod portraits;
 pub mod daily;
+pub mod history;
 
 
 use std::thread::sleep;
