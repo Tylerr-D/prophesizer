@@ -3,7 +3,8 @@ use std::io::{self, Write};
 
 // ok so i just convered it to ascii myself lol
 
-const ZACH: &str = r#",'''''''''''......''''.'''''''',,,,;;;;:::cccllloo
+const ZACH: &str = r#"
+,'''''''''''......''''.'''''''',,,,;;;;:::cccllloo
 '''''...............''..'''... .,,,,;;;:::cclllloo
 ..........................'..   ',,,;;::::cclllloo
 ..........................'.    .,,,;;;:::cclllloo
@@ -35,7 +36,8 @@ const ZACH: &str = r#",'''''''''''......''''.'''''''',,,,;;;;:::cccllloo
 ........,xOOOkkkkxxxxxxxxO0OO0OOOx..oX0. ,xkxxxxxd
 .......'ckOkkkkxkkxddxxxxkOO0000OOk,.lNx..okxxxxxx
 '''....,oOOOkkkkkOxddddddddxxxkkOkk0c.cKl 'ddxxxkk
-'''...';dOOkOkkOOkkddddooooddodxxxxOX:.:0'.:dxxxkk"#;
+'''...';dOOkOkkOOkkddddooooddodxxxxOX:.:0'.:dxxxkk
+"#;
 
 
 
