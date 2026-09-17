@@ -2,6 +2,7 @@ pub mod output;
 pub mod cli;
 pub mod algs;
 pub mod input;
+pub mod other;
 
 use clap::Parser;
 use cli::CliArgs;
@@ -13,22 +14,21 @@ fn main() {
         return;
     }
 
-    if std::env::args().nth(1).as_deref() == Some("rick")
-     {
-         output::sick::play_rick(); 
+    if std::env::args().nth(1).as_deref() == Some("rick") {
+        output::sick::play_rick(); 
         return; 
     }
 
     if args.input == "stats" {
-        output::memory::stats();
+        other::memory::stats();
         return;
     }
 
 
     let number = algs::process_word(&args.input);
 
-    let seen = output::memory::count_word(&args.input);
-    output::memory::record(&args.input);
+    let seen = other::memory::count_word(&args.input);
+    other::memory::record(&args.input);
 
     println!();
 
