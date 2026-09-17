@@ -6,7 +6,7 @@ const LOG: &str = "prophesizer.log";
 // ik its js lowk like memory.rs
 // but aything to farm hours hehehehehehehe
 
-pub fn show_history(){
+pub fn show_history(mode: &str){
 
     let data = fs::read_to_string(LOG).unwrap_or_default();
 
@@ -29,33 +29,27 @@ pub fn show_history(){
 
 }
 
-    // println!();
-    // println!("total words fed: {}", total);
 
-    // if total > 20 {
-    //     println!("that is a lot of words, do you use this machine or worship it");
-    // }
-
-fn by_latest(lines: &|&str|, total: usize){
+fn by_latest(lines: &[&str], total: usize){
 
     println!("recent feedings:");
     println!();
 
     let start = total.saturating_sub(10);
 
-    or line in &lines[start..] {
+    for line in &lines[start..] {
          println!("  {}", line);
      }
 
      footer(total);
 }
 
-fn by_used(lines: &|&str|, total: usize){
+fn by_used(lines: &[&str], total: usize){
 
     let mut counts: HashMap<&str, u32> = HashMap::new();
 
-    let lines in lines {
-        *counts.entry(line).or_insert(0) += 1;
+    for lines in lines {
+        *counts.entry(lines).or_insert(0) += 1;
     }
 
     let mut pairs: Vec<(&str, u32)> = counts.into_iter().collect();
@@ -76,7 +70,7 @@ fn by_alpha(lines: &[&str], total: usize) {
     let mut counts: HashMap<&str, u32> = HashMap::new();
 
     for lines in lines {
-        *counts.entry(line).or_insert(0) += 1;
+        *counts.entry(lines).or_insert(0) += 1;
     }
 
     let mut pairs: Vec<(&str, u32)> = counts.into_iter().collect();
@@ -91,4 +85,13 @@ fn by_alpha(lines: &[&str], total: usize) {
     }
 
     footer(total);
+}
+
+fn footer(total: usize){
+    println!();
+    println!("total words fed: {}", total);
+
+        if total > 20 {
+        println!("that is a lot of words, do you use this machine or worship it");
+    }
 }

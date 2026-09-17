@@ -17,6 +17,14 @@ fn main() {
         return;
 
     }
+
+    if cmd.as_deref() == Some("history") {
+    let mode = argv.next().unwrap_or_default();
+    output::history::show_history(&mode);
+    return;
+}
+
+
     let args = CliArgs::parse();
 
     if output::portraits::show_portrait(&args.input) {
@@ -35,12 +43,6 @@ fn main() {
         output::memory::stats();
         return;
     }
-
-    if args.input == "history" {
-        output::history::show_history();
-        return;
-    }
-
 
     let number = algs::process_word(&args.input);
 
