@@ -37,6 +37,7 @@ pub(crate) fn ascii_art(input: String) {
 }
 
 fn secret_found() {
+    // [RUSTER] change print to your outputter, storm i think idk
     println!("You have found a secret!");
 
     thread::sleep(time::Duration::from_secs(1));
