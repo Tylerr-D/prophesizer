@@ -6,6 +6,8 @@ pub use storm::render_storm;
 pub mod sick;
 pub mod secret;
 pub mod portraits;
+pub mod daily;
+pub mod history;
 
 
 use std::f64::consts::PI;
@@ -216,3 +218,5 @@ fn play_wav(){
 
  let _ = Command::new(player).arg("/tmp/prophesizer_tune.wav").output();
 }
+
+
