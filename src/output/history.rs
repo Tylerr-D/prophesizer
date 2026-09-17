@@ -67,4 +67,28 @@ fn by_used(lines: &|&str|, total: usize){
     for (word, count) in pairs.iter().take(10){
         println!("{:>3} x  {}", count, word);
     }
+
+    footer(total);
+}
+
+fn by_alpha(lines: &[&str], total: usize) {
+
+    let mut counts: HashMap<&str, u32> = HashMap::new();
+
+    for lines in lines {
+        *counts.entry(line).or_insert(0) += 1;
+    }
+
+    let mut pairs: Vec<(&str, u32)> = counts.into_iter().collect();
+
+    pairs.sort_by(|a, b| a.0.cmp(b.0));
+
+    println!("the word list, alphabetized:");
+    println!();
+
+    for(word, count) in &pairs {
+        println!("  {:>3} x  {}", count, word);
+    }
+
+    footer(total);
 }
