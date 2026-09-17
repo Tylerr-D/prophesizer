@@ -38,4 +38,6 @@ pub(crate) fn ascii_art(input: String) {
 
 fn secret_found() {
     println!("You have found a secret!");
+
+    thread::sleep(time::Duration::from_secs(1));
 }
