@@ -20,10 +20,10 @@ fn main() {
     }
 
     if cmd.as_deref() == Some("history") {
-    let mode = argv.next().unwrap_or_default();
-    output::history::show_history(&mode);
-    return;
-}
+        let mode = argv.next().unwrap_or_default();
+        output::history::show_history(&mode);
+        return;
+    }
 
 
     let args = CliArgs::parse();
