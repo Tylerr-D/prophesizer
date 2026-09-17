@@ -7,6 +7,16 @@ use clap::Parser;
 use cli::CliArgs;
 
 fn main() {
+
+    let mut argv = std::env::args();
+    let cmd = argv.nth(1);
+
+    if cmd.as_deref() == Some("daily") {
+        let word = argv.next().unwrap_or_else(|| String::from("the day"));
+    output::daily::show_daily(&word);
+        return;
+
+    }
     let args = CliArgs::parse();
 
     if output::portraits::show_portrait(&args.input) {
@@ -23,6 +33,11 @@ fn main() {
 
     if args.input == "stats" {
         output::memory::stats();
+        return;
+    }
+
+    if args.input == "history" {
+        output::history::show_history();
         return;
     }
 
@@ -58,6 +73,7 @@ fn main() {
             println!("SIX SEVENNN");
             println!("but srsly, do you think something different will happen?")
         }
+ 
     }
  }
 }

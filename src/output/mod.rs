@@ -7,6 +7,8 @@ pub mod sick;
 pub mod memory;
 pub mod secret;
 pub mod portraits;
+pub mod daily;
+pub mod history;
 
 
 use std::thread::sleep;
@@ -217,3 +219,5 @@ fn play_wav(){
 
  let _ = Command::new(player).arg("/tmp/prophesizer_tune.wav").output();
 }
+
+
