@@ -13,7 +13,9 @@ fn main() {
         return;
     }
 
-    if std::env::args().nth(1).as_deref() == Some("rick")
+    let first = std::env::args().nth(1);
+   if let Some(word) = &first {
+    if matches!(word.as_str(), "rick" | "lou" | "sick" | "prophesizer")
      {
          output::sick::play_rick(); 
         return; 
@@ -57,4 +59,5 @@ fn main() {
             println!("but srsly, do you think something different will happen?")
         }
     }
+ }
 }
