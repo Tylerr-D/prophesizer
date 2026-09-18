@@ -138,7 +138,10 @@ fn type_out(text: &str, new_line: bool) {
         io::stdout().flush().unwrap();
         sleep(Duration::from_millis(30));
     }
-    println!();
+    
+    if new_line {
+        println!();
+    }
 }
 
 pub fn play_melody(number:u64) {
