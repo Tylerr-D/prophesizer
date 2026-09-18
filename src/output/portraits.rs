@@ -43,7 +43,7 @@ const ZACH: &str = r#"
 
 pub fn show_portrait(word: &str) -> bool {
     match word {
-        "zach" | "zrl" | "goat" | "Goat" | "ceo" | "chill" | "genius" | "theBigLeagues" => {
+        "zach" | "zrl" | "goat" | "Goat" | "ceo" | "chill" | "genius" | "thebigleagues" => {
             println!();
             println!("zach latta himself");
             println!();
