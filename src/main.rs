@@ -17,9 +17,9 @@ fn main() {
         output::daily::show_daily(args.input.as_deref())
     }
 
-    if cmd.as_deref() == Some("history") {
-        let mode = argv.next().unwrap_or_default();
-        output::history::show_history(&mode);
+
+    if let Some(history) = args.history {
+        output::history::show_history(&*history);
         return;
     }
 
