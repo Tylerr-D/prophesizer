@@ -29,8 +29,7 @@ fn main() {
 
     let (is_secret, idx) = input::secret::check_word(args.input.clone().unwrap());
 
-    if is_secret{
-
+    if is_secret {
         input::secret::give_secret(idx);
         return;
     }
