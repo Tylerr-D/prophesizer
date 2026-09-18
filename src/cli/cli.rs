@@ -25,6 +25,7 @@ pub struct CliArgs {
         short = 'd',
         long = "daily"
     )]
+    /// shows daily prophecy
     pub daily: bool,
 
     #[arg(
