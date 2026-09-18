@@ -39,7 +39,13 @@ const ZACH: &str = r#"
 '''...';dOOkOkkOOkkddddooooddodxxxxOX:.:0'.:dxxxkk
 "#;
 
-
+// add more portraits here
+// in form of:
+//
+// const PORTRAIT_NAME: &str = r#"
+// (portrait image)
+// "
+//
 
 pub fn show_portrait(word: &str) -> bool {
     match word {
@@ -51,6 +57,16 @@ pub fn show_portrait(word: &str) -> bool {
             let _ = io::stdout().flush();
             true
         }
+
+        // add more portraits here
+        // in this form:
+        //
+        // "word" => {
+        //     print!("{}", PORTRAIT_NAME);
+        //     let _ = io::stddout().flush();
+        //     true
+        // }
+        //
         _ => false,
     }
 }
