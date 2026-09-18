@@ -54,3 +54,45 @@ pub fn stats() {
 
     }
 }
+
+pub(crate) fn stat_generic(args: CliArgs) {
+    if args.input.is_none() {
+        return;
+    }
+    
+    let input = args.input.as_deref().unwrap().trim();
+    
+    let number = algs::process_word(input);
+
+    let seen = count_word(input);
+    record(input);
+
+    println!();
+
+    println!("word: {}", input);
+    println!("number: {}", number);
+    output::render(number);
+
+    println!();
+
+    if seen > 0 {
+        println!("hmm, i heard this before...");
+        println!("the machine remembers \"{}\" has been fed {} time{} before",
+                 input, seen, if seen>1 {"s"} else {""});
+
+        println!();
+
+        if seen == 2 {
+            println!("gng obsession is a sin");
+        }
+
+        if seen >= 5 {
+            println!("this word lives here rent free");
+        }
+
+        if seen == 67 {
+            println!("SIX SEVENNN");
+            println!("but srsly, do you think something different will happen?")
+        }
+    }
+}
