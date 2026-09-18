@@ -15,7 +15,7 @@ fn today() -> u64 {
 
 pub fn feed(){
     let mut data = fs::read_to_string(DAYS_FILE).unwrap_or_default();
-    data.push_str(&today().to_string);
+    data.push_str(&today().to_string());
     data.push('\n');
     let _ = fs::write(DAYS_FILE, data);
 }

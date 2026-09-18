@@ -15,6 +15,7 @@ pub fn record(word:&str) {
     data.push_str(word);
     data.push('\n');
     let _ = fs::write(LOG, data);
+    crate::other::days::feed();
 }
 
 pub fn stats() {
@@ -48,6 +49,9 @@ pub fn stats() {
     println!("total readings: {}", data.lines().count());
     println!("different words: {}", counts.len());
     println!("most-consulted: \"{}\" ({} times)", top_word, top_count);
+
+    let days = crate::other::days::streak();
+    println!("fed {} day{} in a row", days, if days == 1 { "" } else { "s" });
 
     if top_count >= 5 {
         println!("yea gng get over this word already. the obsession is crazy");
