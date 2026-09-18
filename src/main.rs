@@ -9,6 +9,7 @@ pub mod other;
 use clap::Parser;
 use cli::CliArgs;
 
+
 fn main() {
 
     let mut argv = std::env::args();
@@ -30,6 +31,18 @@ fn main() {
 
     let args = CliArgs::parse();
 
+    let (is_secret, idx) = input::secret::check_word(args.input.clone());
+
+    if is_secret{
+
+        input::secret::give_secret(idx);
+        return;
+    }
+
+    if output::portraits::show_portrait(&args.input){
+        return;
+    }
+
     if output::portraits::show_portrait(&args.input) {
         return;
     }
@@ -45,6 +58,8 @@ fn main() {
             other::memory::stats();
             return;
         }
+
+        
 
         other::memory::stats();
 

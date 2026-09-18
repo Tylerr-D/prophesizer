@@ -24,7 +24,12 @@ pub(crate) fn check_word(input: String) -> (bool, usize) {
     (matched, index)
 }
 
-fn give_secret(index: usize) {
+pub(crate) fn give_secret(index: usize) {
+
+    
+println!("DEBUG: reached give_secret, index = {}", index);
+
+
     let secret = _SECRET_WORDS.get(&index).unwrap();
 
     if secret.category.is_some() {
@@ -50,13 +55,17 @@ fn give_secret(index: usize) {
         }
 
         if category == "ascii-animation" {
-            output::secret::ascii_animation(secret.input.as_deref().unwrap().parse().unwrap())
+            output::secret::ascii_animation(secret.input.clone().unwrap_or_default())
+
+
         }
 
         if category == "ascii-art" {
-            output::secret::ascii_art(secret.input.as_deref().unwrap().parse().unwrap())
-        }
+            output::secret::ascii_art(secret.input.clone().unwrap_or_default())
+
+            
 
         // add more categories here
     }
+}
 }

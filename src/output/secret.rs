@@ -17,22 +17,13 @@ pub(crate) fn output_secret(output: &String) {
 
 pub(crate) fn output_variable_secret(outputs: &Vec<String>) {
     secret_found();
-    // let outputs_available = outputs.len();
 
-    // let smth: usize = rand::random_range(0..outputs_available-1);
+    let now = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH).unwrap()
+        .as_nanos();
 
-    if outputs.len() == 1 {
-        type_out(&outputs[0]);
-        println!();
-        return;
-    }
-
-    // println!("{}", outputs[smth]);
-    // todo!(
-    //     "[RUSTER] replace print with your outputter"
-    // )
-
-    let smth: usize = rand::random_range(0..outputs.len());
+        
+       let smth = (now % outputs.len() as u128) as usize;
     type_out(&outputs[smth]);
     println!();
 }

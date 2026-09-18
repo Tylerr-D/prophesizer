@@ -95,3 +95,4 @@ fn footer(total: usize){
         println!("that is a lot of words, do you use this machine or worship it");
     }
 }
+
