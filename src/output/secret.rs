@@ -2,6 +2,10 @@ use core::time;
 use std::thread;
 use rand;
 
+use super::sick::play_rick;
+use super storm::render_storm;
+use super type_out;
+
 pub(crate) fn output_secret(output: &String) {
     secret_found();
     println!("{}", output);
