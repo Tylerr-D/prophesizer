@@ -10,6 +10,7 @@ use super::type_out;
 pub(crate) fn output_secret(output: &String) {
     secret_found();
     type_out(output, true);
+    
     // todo!(
     //     "[RUSTER] replace print with your outputter"
     // )
