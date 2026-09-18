@@ -1,6 +1,9 @@
 use std::collections::HashMap;
 use std::fs;
 
+use crate::{algs, output};
+use crate::cli::CliArgs;
+
 const LOG: &str = "prophesizer.log";
 
 pub fn count_word(word: &str) -> u32 {
@@ -59,9 +62,9 @@ pub(crate) fn stat_generic(args: CliArgs) {
     if args.input.is_none() {
         return;
     }
-    
+
     let input = args.input.as_deref().unwrap().trim();
-    
+
     let number = algs::process_word(input);
 
     let seen = count_word(input);
