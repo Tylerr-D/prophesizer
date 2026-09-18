@@ -132,7 +132,7 @@ fn flicker() {
 
 
 // i hope this looks fine lol
-fn type_out(text: &str) {
+fn type_out(text: &str, new_line: bool) {
     for ch in text.chars(){
         print!("{}", ch);
         io::stdout().flush().unwrap();
