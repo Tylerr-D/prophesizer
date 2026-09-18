@@ -9,7 +9,7 @@ use clap::Parser;
 )]
 pub struct CliArgs {
     #[arg(
-        alias="input"
+        alias = "input"
     )]
     /// input any word
     pub input: String,
