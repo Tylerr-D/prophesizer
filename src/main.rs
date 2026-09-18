@@ -34,25 +34,10 @@ fn main() {
         return;
     }
 
-    if output::portraits::show_portrait(&args.input){
+    if args.stats {
+        other::memory::stats();
         return;
     }
-
-    if output::portraits::show_portrait(&args.input) {
-        return;
-    }
-
-    let first = std::env::args().nth(1);
-    if let Some(word) = &first {
-        if matches!(word.as_str(), "rick" | "lou" | "sick" | "prophesizer") {
-            output::sick::play_rick();
-            return;
-        }
-
-        if args.input == "stats" {
-            other::memory::stats();
-            return;
-        }
 
         
 
