@@ -27,9 +27,7 @@ fn main() {
         return;
     }
 
-    let args = CliArgs::parse();
-
-    let (is_secret, idx) = input::secret::check_word(args.input.clone());
+    let (is_secret, idx) = input::secret::check_word(args.input.clone().unwrap());
 
     if is_secret{
 
