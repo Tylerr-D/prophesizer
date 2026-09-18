@@ -9,7 +9,7 @@ use super::type_out;
 
 pub(crate) fn output_secret(output: &String) {
     secret_found();
-    type_out(output);
+    type_out(output, true);
     // todo!(
     //     "[RUSTER] replace print with your outputter"
     // )
@@ -21,10 +21,9 @@ pub(crate) fn output_variable_secret(outputs: &Vec<String>) {
     let now = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH).unwrap()
         .as_nanos();
+    let smth = (now % outputs.len() as u128) as usize;
 
-        
-       let smth = (now % outputs.len() as u128) as usize;
-    type_out(&outputs[smth]);
+    type_out(&outputs[smth], true);
     println!();
 }
 
@@ -54,7 +53,9 @@ fn secret_found() {
     // [RUSTER] change print to your outputter, storm i think idk
     // oke
 
-    type_out("you have found a secret");
+    type_out("you have found a secret", false);
 
-    thread::sleep(time::Duration::from_secs(1));
+    thread::sleep(time::Duration::from_millis(500));
+
+    print!("\r\x1B[K")
 }
