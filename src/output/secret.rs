@@ -27,7 +27,7 @@ pub(crate) fn output_variable_secret(outputs: &Vec<String>) {
     println!();
 }
 
-pub(crate) fn ascii_animation(input: String) {
+pub(crate) fn ascii_animation(_input: String) {
     secret_found();
 
     play_rick();
