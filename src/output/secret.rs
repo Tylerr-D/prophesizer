@@ -5,7 +5,8 @@ use std::thread;
 
 use super::sick::play_rick;
 use super::storm::render_storm;
-use super::type_out;
+
+use crate::output::type_out;
 
 pub(crate) fn output_secret(output: &String) {
     secret_found();
