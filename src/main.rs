@@ -23,6 +23,9 @@ fn main() {
         return;
     }
 
+    if args.input.is_none() {
+        return;
+    }
 
     let args = CliArgs::parse();
 
