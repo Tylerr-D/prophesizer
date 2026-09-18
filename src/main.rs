@@ -11,15 +11,10 @@ use cli::CliArgs;
 
 
 fn main() {
-
-    let mut argv = std::env::args();
-    let cmd = argv.nth(1);
-
-    if cmd.as_deref() == Some("daily") {
-        let word = argv.next().unwrap_or_else(|| String::from("the day"));
-    output::daily::show_daily(&word);
-        return;
-
+    let args = CliArgs::parse();
+    
+    if args.daily {
+        output::daily::show_daily(args.input.as_deref())
     }
 
     if cmd.as_deref() == Some("history") {
