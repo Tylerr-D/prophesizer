@@ -54,12 +54,12 @@ pub fn render(number:u64){
     match number % 4 {
         0 => {
             let pick = number as usize % prophecies.len();
-           type_out(&format!("prophecy: {}", prophecies[pick]));
+           type_out(&format!("prophecy: {}", prophecies[pick]), true);
         }
 
         1 => {
             let pick = number as usize % readings.len();
-            type_out(&format!("reading: you are lowk {}",readings[pick]));
+            type_out(&format!("reading: you are lowk {}", readings[pick]), true);
         }
 
         3 => {
@@ -69,7 +69,7 @@ pub fn render(number:u64){
         _ => {
             let pick = number as usize % prophecies.len();
             let color = colors[number as usize % colors.len()];
-            type_out(&format!("prophecy:{}{}{}",color, prophecies[pick], reset));
+            type_out(&format!("prophecy:{}{}{}", color, prophecies[pick], reset), true);
         }
     }
 
