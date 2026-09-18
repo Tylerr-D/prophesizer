@@ -26,10 +26,6 @@ pub(crate) fn check_word(input: String) -> (bool, usize) {
 
 pub(crate) fn give_secret(index: usize) {
 
-    
-println!("DEBUG: reached give_secret, index = {}", index);
-
-
     let secret = _SECRET_WORDS.get(&index).unwrap();
 
     if secret.category.is_some() {
