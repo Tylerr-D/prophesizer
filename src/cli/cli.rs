@@ -31,6 +31,20 @@ pub struct CliArgs {
     #[arg(
         long = "history"
     )]
-    /// shows history of previous inputs
+    /// shows the last 10 words you fed to the machine
     pub history: Option<String>,
+
+    #[arg(
+        long = "diagnose"
+    )]
+    /// gives a medical report for a word
+    pub diagnose: bool,
+
+    #[arg(
+        short = 'k',
+        long = "karma"
+    )]
+    /// shows karma of every word you have fed the machine
+    pub karma: bool,
+
 }
