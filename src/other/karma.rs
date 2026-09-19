@@ -32,9 +32,9 @@ fn write(map: &HashMap<String, (u32, u64)>) {
 
 pub fn feed(word: &str) {
     let mut map = read();
-    let (c, _) = map.entry(word.to_string()).or_insert((0, today()));
+    let (c, d) = map.entry(word.to_string()).or_insert((0, today()));
     *c += 1;
-    write(&map);
+    *d = today();
 }
 
 pub fn tier(score: i64) -> &'static str {
