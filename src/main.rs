@@ -23,6 +23,12 @@ fn main() {
         return;
     }
 
+        if args.stats {
+        other::memory::stats();
+        return;
+    }
+
+    
     if args.input.is_none() {
         return;
     }
@@ -31,11 +37,6 @@ fn main() {
 
     if is_secret {
         input::secret::give_secret(idx);
-        return;
-    }
-
-    if args.stats {
-        other::memory::stats();
         return;
     }
 

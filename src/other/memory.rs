@@ -19,6 +19,7 @@ pub fn record(word:&str) {
     data.push('\n');
     let _ = fs::write(LOG, data);
     crate::other::days::feed();
+    crate::other::karma::feed(word);
 }
 
 pub fn stats() {
@@ -60,6 +61,8 @@ pub fn stats() {
         println!("yea gng get over this word already. the obsession is crazy");
 
     }
+
+    crate::other::karma::show();
 }
 
 pub(crate) fn stat_generic(args: CliArgs) {
@@ -102,4 +105,7 @@ pub(crate) fn stat_generic(args: CliArgs) {
             println!("but srsly, do you think something different will happen?")
         }
     }
+
+    let (kscore, ktier) = crate::other::karma::state(input);
+        println!("karma: {} ({})", ktier, kscore);
 }
