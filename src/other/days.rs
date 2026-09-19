@@ -10,7 +10,7 @@ fn today() -> u64 {
     .duration_since(UNIX_EPOCH)
     .unwrap()
     .as_secs()
-    / 86_400
+    / 86_400 
 }
 
 pub fn feed(){
