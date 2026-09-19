@@ -1,7 +1,9 @@
 use std::collections::HashMap;
 use std::sync::LazyLock;
+
 use crate::input::Secrets;
 use crate::output;
+use crate::output::type_out;
 
 const _SECRET_FILE: &'static str = include_str!("secret.json");
 
@@ -50,18 +52,23 @@ pub(crate) fn give_secret(index: usize) {
             }
         }
 
-        if category == "ascii-animation" {
-            output::secret::ascii_animation(secret.input.clone().unwrap_or_default())
-
-
+        else if category == "ascii-animation" {
+            output::secret::ascii_animation(secret.input.clone().unwrap_or_default());
         }
 
-        if category == "ascii-art" {
-            output::secret::ascii_art(secret.input.clone().unwrap_or_default())
+        else if category == "ascii-art" {
+            output::secret::ascii_art(secret.input.clone().unwrap_or_default());
+        }
 
-            
+        else if category == "portrait" {
+            output::portraits::show_portrait(&*secret.input.clone().unwrap_or_default());
+        }
 
-        // add more categories here
+        else {
+            type_out("", true);
+            todo!(
+                "call generic output"
+            )
+        }
     }
-}
 }

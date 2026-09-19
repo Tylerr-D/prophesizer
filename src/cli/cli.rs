@@ -9,8 +9,28 @@ use clap::Parser;
 )]
 pub struct CliArgs {
     #[arg(
-        alias="input"
+        alias = "input"
     )]
     /// input any word
-    pub input: String,
+    pub input: Option<String>,
+
+    #[arg(
+        short = 's',
+        long = "stats",
+    )]
+    /// shows stats
+    pub stats: bool,
+
+    #[arg(
+        short = 'd',
+        long = "daily"
+    )]
+    /// shows daily prophecy
+    pub daily: bool,
+
+    #[arg(
+        long = "history"
+    )]
+    /// shows history of previous inputs
+    pub history: Option<String>,
 }
