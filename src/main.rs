@@ -11,6 +11,14 @@ use cli::CliArgs;
 
 
 fn main() {
+
+        if std::env::args().nth(1).as_deref()== Some("diagnose") {
+        let word = std::env::args().nth(2).unwrap_or_else(|| String::from("the patient"));
+        output::diagnose::show_diagnose(&word);
+        return;
+    }
+
+    
     let args = CliArgs::parse();
     
     if args.daily {

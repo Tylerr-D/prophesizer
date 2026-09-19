@@ -8,6 +8,7 @@ pub mod secret;
 pub mod portraits;
 pub mod daily;
 pub mod history;
+pub mod diagnose;
 
 
 use std::f64::consts::PI;
