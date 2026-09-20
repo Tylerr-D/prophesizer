@@ -1,9 +1,10 @@
-use std::io::{self, Write};
+use std::io::{self, Write, Cursor};
 use std::thread::sleep;
 use std::time::Duration;
 use std::process::Command;
 
 use include_dir::{include_dir, Dir};
+use rodio::{Decoder, DeviceSinkBuilder, Player};
 
 pub static RICK_AUDIO: &[u8] = include_bytes!("../../assets/rickroll.mp3");
 
@@ -11,17 +12,20 @@ static RICK_FRAMES: Dir = include_dir!("$CARGO_MANIFEST_DIR/assets/rick_frames")
 
 pub fn play_rick() {
     let fps = 10;
-
     let frame_ms = 1000 / fps;
 
     print!("\x1b[?1049h"); 
     io::stdout().flush().unwrap();
 
 
-let _ = Command::new("mpv")
-    .arg("--no-video")
-    .arg("assets/rickroll.mp3")
-    .spawn();
+    let rickrolling = DeviceSinkBuilder::open_default_sink()
+        .expect("Failed to open audio device");
+
+    let cursor = Cursor::new(RICK_AUDIO);
+    let source = Decoder::new(cursor).expect("Failed to decode");
+
+    let player = Player::connect_new(rickrolling.mixer());
+    player.append(source);
 
     for i in 1..=300 {
         let path = format!("frame_{:04}.txt", i);
