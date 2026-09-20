@@ -3,7 +3,7 @@ extern crate core;
 pub mod output;
 pub mod cli;
 pub mod algs;
-pub mod input;
+pub mod secret;
 pub mod other;
 
 use clap::Parser;
@@ -42,10 +42,10 @@ fn main() {
         return;
     }
 
-    let (is_secret, idx) = input::secret::check_word(args.input.clone().unwrap());
+    let (is_secret, idx) = secret::secret::check_word(args.input.clone().unwrap());
 
     if is_secret {
-        input::secret::give_secret(idx);
+        secret::secret::give_secret(idx);
         return;
     }
 
