@@ -214,13 +214,9 @@ wav.extend_from_slice(&((*s * 32767.0) as i16).to_le_bytes());
 fn play_wav(){
     let player = if cfg!(target_os = "macos") {
         "afplay"
-    }
-
-    else {
+    } else {
         "aplay"
     };
 
- let _ = Command::new(player).arg("/tmp/prophesizer_tune.wav").output();
+    let _ = Command::new(player).arg("/tmp/prophesizer_tune.wav").output();
 }
-
-
