@@ -51,6 +51,12 @@ pub(crate) fn ascii_art(input: String) {
     // )
 }
 
+pub(crate) fn show_portrait(input: String) {
+    secret_found();
+    
+    output::portraits::show_portrait(&*input);
+}
+
 fn secret_found() {
     // [RUSTER] change print to your outputter
     // oke
