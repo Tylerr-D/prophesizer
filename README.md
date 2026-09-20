@@ -93,7 +93,7 @@ Done!, add to path to run anywhere or run from home like:
 
 ## Contributors
 *   **[![Amaan](https://img.shields.io/badge/GitHub-MiniGun1239-orange?style=plastic)](https://www.github.com/MiniGun1239)**
-*   **TBA (no one else yet 🥹)**
+*   **[![Ruster](https://img.shields.io/badge/GitHub-TylerrD-orange?style=plastic)](https://www.github.com/Tylerr-D)**
 
 > Coded and tested in Ubuntu and Arch Linux, should work in any distro.
 
