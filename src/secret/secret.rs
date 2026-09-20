@@ -16,7 +16,19 @@ pub(crate) fn check_word(input: String) -> (bool, usize) {
     let mut matched: bool = false;
 
     for (i, secret) in _SECRET_WORDS.iter() {
-        if input == secret.input.as_deref().unwrap_or("") {
+        if secret.inputs.is_some() {
+            let inputs: Vec<String> = secret.inputs.as_deref().unwrap().to_vec();
+
+            for sub_input in inputs.iter() {
+                if sub_input == input.as_str() {
+                    index = *i;
+                    matched = true;
+                    break;
+                }
+            }
+        }
+
+        else if input == secret.input.as_deref().unwrap_or("") {
             index = *i;
             matched = true;
             break;
