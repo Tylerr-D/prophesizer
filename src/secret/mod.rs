@@ -8,7 +8,10 @@ pub(crate) struct Secrets {
 
     #[serde(rename="word")]
     input: Option<String>,
+    inputs: Option<Vec<String>>,
+
     description: Option<String>,
+
     output: Option<String>,
     outputs: Option<Vec<String>>,
     category: Option<String>,
