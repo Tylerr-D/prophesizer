@@ -3,6 +3,12 @@ use std::thread::sleep;
 use std::time::Duration;
 use std::process::Command;
 
+use include_dir::{include_dir, Dir};
+
+pub static RICK_AUDIO: &[u8] = include_bytes!("../../assets/rickroll.mp3");
+
+static RICK_FRAMES: Dir = include_dir!("$CARGO_MANIFEST_DIR/assets/rick_frames");
+
 pub fn play_rick() {
     let fps = 10;
 
@@ -18,11 +24,13 @@ let _ = Command::new("mpv")
     .spawn();
 
     for i in 1..=300 {
-        
-        let path = format!("assets/ascii_frames/frame_{:04}.txt",i);
-        let text = match std::fs::read_to_string(&path){
-            Ok(t) => t,
-            Err(_) => break,
+        let path = format!("frame_{:04}.txt", i);
+        let text = match RICK_FRAMES.get_file(&path){
+            Some(file) => match file.contents_utf8() {
+                Some(info) => info,
+                None => break,
+            }
+            None => break,
         };
 
 
@@ -35,5 +43,4 @@ let _ = Command::new("mpv")
     print!("\x1b[?1049l");
     io::stdout().flush().unwrap();
     println!("you just got prophesized. never gonna give you up.");
-
 }
