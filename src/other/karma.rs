@@ -35,6 +35,8 @@ pub fn feed(word: &str) {
     let (c, d) = map.entry(word.to_string()).or_insert((0, today()));
     *c += 1;
     *d = today();
+
+    write(&map);
 }
 
 pub fn tier(score: i64) -> &'static str {
