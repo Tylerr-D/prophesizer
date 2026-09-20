@@ -11,13 +11,6 @@ use cli::CliArgs;
 
 
 fn main() {
-
-    if std::env::args().nth(1).as_deref()== Some("diagnose") {
-        let word = std::env::args().nth(2).unwrap_or_else(|| String::from("the patient"));
-        output::diagnose::show_diagnose(&word);
-        return;
-    }
-    
     let args = CliArgs::parse();
 
     if args.karma {
@@ -35,12 +28,16 @@ fn main() {
         return;
     }
 
-        if args.stats {
+    if args.stats {
         other::memory::stats();
         return;
     }
 
-    
+    if let Some(word) = args.diagnose {
+        output::diagnose::show_diagnose(word.as_str());
+        return;
+    }
+
     if args.input.is_none() {
         return;
     }
