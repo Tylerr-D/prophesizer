@@ -61,7 +61,7 @@ pub(crate) fn give_secret(index: usize) {
         }
 
         else if category == "portrait" {
-            output::portraits::show_portrait(&*secret.input.clone().unwrap_or_default());
+            output::secret::show_portrait(secret.input.clone().unwrap_or_default());
         }
 
         else {
