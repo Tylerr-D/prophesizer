@@ -13,28 +13,28 @@ use cli::CliArgs;
 fn main() {
     let args = CliArgs::parse();
 
-    if args.karma {
-        other::karma::show();
-        return;
-    }
-    
-    if args.daily {
-        output::daily::show_daily(args.input.as_deref())
-    }
-
-
     if let Some(history) = args.history {
         output::history::show_history(&*history);
         return;
     }
 
-    if args.stats {
-        other::memory::stats();
+    if let Some(word) = args.diagnose {
+        output::diagnose::show_diagnose(word.as_str());
         return;
     }
 
-    if let Some(word) = args.diagnose {
-        output::diagnose::show_diagnose(word.as_str());
+    if args.karma {
+        other::karma::show();
+        return;
+    }
+
+    if args.daily {
+        output::daily::show_daily(args.input.as_deref());
+        return;
+    }
+
+    if args.stats {
+        other::memory::stats();
         return;
     }
 
