@@ -31,14 +31,17 @@ pub struct CliArgs {
     #[arg(
         long = "history"
     )]
-    /// shows the last 10 words you fed to the machine
+    /// shows last words you fed to the machine, takes input mode to sort
+    ///
+    /// modes: 'abc' = alphabetical, 'used' = most used, (anything else) = by latest
     pub history: Option<String>,
 
     #[arg(
+        short = 'g',
         long = "diagnose"
     )]
     /// gives a medical report for a word
-    pub diagnose: bool,
+    pub diagnose: Option<String>,
 
     #[arg(
         short = 'k',
@@ -46,5 +49,4 @@ pub struct CliArgs {
     )]
     /// shows karma of every word you have fed the machine
     pub karma: bool,
-
 }
