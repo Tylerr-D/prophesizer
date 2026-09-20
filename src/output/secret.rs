@@ -1,6 +1,6 @@
 use core::time;
 use std::thread;
-
+use crate::output;
 // umm yea fixed the imports
 
 use super::sick::play_rick;
