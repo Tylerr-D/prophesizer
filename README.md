@@ -1,11 +1,8 @@
 # Prophesizer
 
-[![Time Spent](https://hackatime.hackclub.com/api/v1/badge/U0AJWQ44PGQ/MiniGun1239/prophesizer)](https://hackatime.hackclub.com/my/projects/prophesizer)
-[![prophesizer](https://img.shields.io/badge/GitHub-prophesizer-green?style=plastic)](https://www.github.com/MiniGun1239/prophesizer)
+[![prophesizer](https://img.shields.io/badge/GitHub-prophesizer-green?style=plastic)](https://www.github.com/Tylerr-D/prophesizer)
 
-> Fun with chemistry and statistics
-
-Fun chem app ("Fun" in very, very deep quotes, and very subjective)
+> for all your prophesizing dreams
 
 ---
 
@@ -51,10 +48,10 @@ Get the latest release from [GitHub](https://github.com/Tylerr-D/prophesizer/rel
 Or download from command line, like this:
 
 
-#### Linux
+#### Download (Linux only)
 
 ```shell
-curl -L https://github.com/Tylerr-D/prophesizer/releases/download/Release/prophersizer-0.1.0-x86_64-Linux -o prophesizer
+curl -L https://github.com/Tylerr-D/prophesizer/releases/download/Release/prophesizer-0.1.0-x86_64-Linux -o prophesizer
 chmod +x prophesizer
 ```
 
