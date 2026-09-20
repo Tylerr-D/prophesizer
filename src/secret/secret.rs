@@ -58,9 +58,8 @@ pub(crate) fn give_secret(index: usize) {
             }
 
             else {
-                todo!(
-                    "call generic output"
-                )
+                type_out("You have found a secret....", true);
+                type_out("that does not exist", true);
             }
         }
 
@@ -77,10 +76,8 @@ pub(crate) fn give_secret(index: usize) {
         }
 
         else {
-            type_out("", true);
-            todo!(
-                "call generic output"
-            )
+            type_out("You have found a secret....", true);
+            type_out("that does not exist", true);
         }
     }
 }
