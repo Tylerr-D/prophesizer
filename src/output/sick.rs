@@ -1,7 +1,6 @@
 use std::io::{self, Write, Cursor};
 use std::thread::sleep;
 use std::time::Duration;
-use std::process::Command;
 
 use include_dir::{include_dir, Dir};
 use rodio::{Decoder, DeviceSinkBuilder, Player};
