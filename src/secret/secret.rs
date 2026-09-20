@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 use std::sync::LazyLock;
 
-use crate::input::Secrets;
+use crate::secret::Secrets;
 use crate::output;
 use crate::output::type_out;
 
