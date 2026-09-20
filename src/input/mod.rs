@@ -1,6 +1,5 @@
 use serde::Deserialize;
 
-pub mod input;
 pub mod secret;
 
 #[derive(Deserialize)]
