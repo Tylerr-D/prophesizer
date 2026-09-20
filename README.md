@@ -97,7 +97,7 @@ Done!, add to path to run anywhere or run from home like:
 
 > Coded and tested in Ubuntu and Arch Linux, should work in any distro.
 
-## Examples
+## Help
 ```shell
 Usage: prophesizer [OPTIONS] [INPUT]
 
