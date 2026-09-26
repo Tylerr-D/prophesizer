@@ -90,6 +90,16 @@ Done!, add to path to run anywhere or run from home like:
    ```shell
    ./prophesizer -V
    ```
+   
+5. Add to alias:    
+   If you want to add it so that you can run it directly without the './', then do this:
+```shell
+mv prophesizer ~/local/bin/prophesizer
+echo 'alias prophesizer="~/local/bin/prophesizer"' >> .bashrc
+```
+>(change .bashrc to .zshrc if using zsh or whatever your shell uses)
+
+
 
 ## Contributors
 *   **[![Amaan](https://img.shields.io/badge/GitHub-MiniGun1239-orange?style=plastic)](https://www.github.com/MiniGun1239)**
@@ -99,7 +109,7 @@ Done!, add to path to run anywhere or run from home like:
 
 ## Help
 ```shell
-Usage: ./prophesizer [OPTIONS] [INPUT]
+Usage: prophesizer [OPTIONS] [INPUT]
 
 Arguments:
   [INPUT]  input any word
