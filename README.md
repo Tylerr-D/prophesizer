@@ -92,14 +92,22 @@ Done!, add to path to run anywhere or run from home like:
    ```
    
 5. Add to alias:    
-   If you want to add it so that you can run it directly without the './', then do this:
+   If you want to add it so that you can run it directly without the './', then do this:  
+If using Bash:
+```shell
+mv prophesizer .local/bin/
+echo 'alias prophesizer="./.local/bin/prophesizer"' >> .bashrc
+```
+If using Zsh:
 ```shell
 mv prophesizer ~/local/bin/prophesizer
-echo 'alias prophesizer="~/local/bin/prophesizer"' >> .bashrc
+echo 'alias prophesizer="./.local/bin/prophesizer"' >> .bashrc
 ```
->(change .bashrc to .zshrc if using zsh or whatever your shell uses)
-
-
+If using Fish:
+```shell
+mv prophesizer ~/local/bin/prophesizer
+abbr -a prophesizer "./.local/bin/prophesizer"
+```
 
 ## Contributors
 *   **[![Amaan](https://img.shields.io/badge/GitHub-MiniGun1239-orange?style=plastic)](https://www.github.com/MiniGun1239)**
