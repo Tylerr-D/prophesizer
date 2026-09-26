@@ -99,7 +99,7 @@ Done!, add to path to run anywhere or run from home like:
 
 ## Help
 ```shell
-Usage: prophesizer [OPTIONS] [INPUT]
+Usage: ./prophesizer [OPTIONS] [INPUT]
 
 Arguments:
   [INPUT]  input any word
