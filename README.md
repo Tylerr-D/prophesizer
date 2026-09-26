@@ -93,6 +93,7 @@ Done!, add to path to run anywhere or run from home like:
    
 5. Add to alias:    
    If you want to add it so that you can run it directly without the './', then do this:  
+
 If using Bash:
 ```shell
 mv prophesizer .local/bin/
